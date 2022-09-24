@@ -1,0 +1,9 @@
+&-footer {
+    width: 100%;
+    font-size: $cardTextFontSize;
+
+    &__container {
+        padding: $gutter / 2 0 0;
+        text-align: center;
+    }
+}

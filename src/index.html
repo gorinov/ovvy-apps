@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <base href="%PUBLIC_URL%/">
+    <link rel="icon" href="https://ovvy.ru/assets/images/favicon/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>OVVY Development</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<script>
+
+    var w = window;
+    var q = {
+        component: 'menu', //menu booking manager create-company-form delivery
+        provider: 731,
+        menuId: 13,
+        //orderId: '752fdf1a-eeea-11',
+        container: 'ov-container'
+    };
+    var o = w.ovvy = (w.ovvy || {});
+    o.apps = (o.apps || []);
+    o.apps.push(q);
+
+</script>
+
+<div id="ov-container"></div>
+</body>
+</html>

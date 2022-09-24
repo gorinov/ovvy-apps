@@ -1,0 +1,32 @@
+&-info {
+    padding: $gutter * 1.5;
+    max-width: 360px;
+    font-size: $fontSize;
+
+    @media (max-width: $bpMobile) {
+        max-width: 100%;
+    }
+
+    &__text {
+        margin-bottom: $gutter;
+    }
+
+    &__time {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: $gutter;
+
+        &-name {
+            padding: $gutter / 3 0;
+        }
+
+        &-hours {
+            text-align: right;
+            padding: $gutter / 3 0 $gutter / 3 $gutter * 2;
+        }
+    }
+
+    &__row {
+        display: contents;
+    }
+}

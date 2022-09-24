@@ -1,0 +1,107 @@
+&-button {
+    $size: 36px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: $transition;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    font-family: inherit;
+    border-radius: var(--button-border-radius);
+    line-height: 1.5 * $buttonFontSize;
+    font-size: $buttonFontSize;
+    flex: 1;
+    background: transparent;
+
+    &__icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    &__order {
+        margin-left: 3px;
+    }
+
+    &.-stepper {
+        width: $size;
+        height: $size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7px;
+        color: var(--button-stepper-color);
+        background: var(--button-stepper-bg-color);
+
+        &:hover {
+            background: var(--button-stepper-hover-bg-color);
+        }
+    }
+
+    &.-submit {
+        background: var(--button-bg-color);
+        color: var(--button-font-color);
+        width: 100%;
+        height: $size;
+        padding: 0 $gutter * 1.5;
+    }
+
+    &.-default {
+        background: var(--button-bg-color);
+        color: var(--button-font-color);
+        white-space: nowrap;
+        padding: 0 $gutter * 1.5;
+        height: $size;
+        min-height: $size;
+
+        &:hover {
+            background: var(--button-bg-hover-color);
+        }
+    }
+
+    &.-cancel {
+        background: var(--button-cancel-bg-color);
+        color: var(--button-cancel-color);
+        white-space: nowrap;
+        padding: 0 $gutter * 1.5;
+        height: $size;
+
+        &:hover {
+            background: var(--button-cancel-bg-hover-color);
+        }
+    }
+
+    &.-disabled {
+        background: var(--button-cancel-bg-color);
+        color: var(--button-cancel-color);
+        padding: $gutter / 4 $gutter / 2;
+        cursor: default;
+        width: 100%;
+        min-height: $size;
+
+        span {
+            white-space: nowrap;
+        }
+    }
+
+    &.-selector {
+        height: $size;
+        color: var(--button-stepper-color);
+
+        .ov-button__icon {
+            margin-right: $gutter / 2;
+            opacity: $opacity;
+        }
+
+        &.-active {
+            background: var(--button-bg-color);
+            color: var(--button-font-color);
+
+            .ov-button__icon {
+                opacity: 1;
+            }
+        }
+    }
+}

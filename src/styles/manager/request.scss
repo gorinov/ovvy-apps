@@ -1,0 +1,60 @@
+&-request {
+    &__caption {
+        margin: 0 0 $gutter / 2;
+        font-size: $captionFontSize;
+    }
+
+    &__order {
+        margin-bottom: $gutter * 2;
+        min-width: 100%;
+        overflow: auto;
+        border-collapse: collapse;
+
+        tbody, thead {
+            display: grid;
+            grid-template-columns:
+                minmax(25px, .5fr) minmax(100px, 10fr) minmax(80px, 2fr) minmax(80px, 2fr);
+        }
+
+        tr {
+            display: contents;
+        }
+
+        th, td {
+            text-align: left;
+            padding: $gutter / 2;
+        }
+
+        &-item {
+            &.-header {
+                > * {
+                    background: $tableHeaderBgColor;
+                }
+            }
+        }
+    }
+
+    &__customer {
+        display: flex;
+        flex-direction: column;
+
+        &-item {
+            display: flex;
+            justify-content: space-between;
+            padding: $gutter / 2 0;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $borderColor;
+            }
+
+            span:first-child {
+                flex: 0 0 100px;
+                margin-right: $gutter;
+            }
+
+            span:last-child {
+                flex: 1;
+            }
+        }
+    }
+}

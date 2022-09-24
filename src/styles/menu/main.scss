@@ -1,0 +1,207 @@
+@import "../base";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+$lineShadow: 0 1px 0 0 #e3e4e6;
+$shadow: 0px -2px 8px 0px rgb(0 0 0 / 4%), 0px 8px 8px 0px rgb(0 0 0 / 8%);
+$shadowLight: 0px 0 0 0px rgb(0 0 0 / 2%), 0px 4px 4px 0px rgb(0 0 0 / 4%);
+$titleFontSize: 28px;
+$cardTitleFontSize: 18px;
+$fontSize: 14px;
+$buttonFontSize: 14px;
+$cardTextFontSize: 13px;
+$pageGutter: $gutter * 3;
+$headerHeight: 80px;
+$basketWidth: 360px;
+
+:root {
+    --bg-color: #fff;
+    --popup-overlay-bg-color: #000;
+    --content-bg-color: #F4F5F7;
+    --title-font-color: #525252;
+    --font-color: #2f2f2f;
+    --card-bg-color: #fff;
+    --card-image-bg-color: #eee;
+    --card-text-font-color: #b0b0b0;
+    --primary-color: #F44336;
+    --primary-contrast-color: #fff;
+    --secondary-color: #30bced;
+    --button-border-radius: 5px;
+    --button-bg-color: #F44336;
+    --button-bg-hover-color: #c43a2e;
+    --button-cancel-color: #21201F;
+    --button-cancel-bg-color: #F1F0ED;
+    --button-cancel-bg-hover-color: #d5d4d2;
+    --button-stepper-color: #333;
+    --button-stepper-bg-color: #ececec;
+    --button-stepper-hover-bg-color: #ddd;
+    --button-font-color: var(--primary-contrast-color);
+    --navigation-bg-hover-color: #ececec;
+    --navigation-bg-active-color: #ececec;
+    --navigation-font-color: #333;
+    --navigation-font-active-color: #333;
+    --loading-bg: #ececec;
+    --error-color: #721c24;
+    --error-bg-color: #f8d7da;
+    --form-text-color: var(--font-color);
+    --form-textarea-bg-color: var(--card-bg-color);
+}
+
+@keyframes loading {
+    to {
+        background-position-x: -200%;
+    }
+}
+
+@mixin loading {
+    background: #eee;
+    background: linear-gradient(110deg, var(--loading-bg) 8%, #f5f5f5 18%, var(--loading-bg) 33%);
+    border-radius: 5px;
+    background-size: 200% 100%;
+    animation: 1.5s loading linear infinite;
+}
+
+.ov {
+    display: flex;
+    flex-direction: column;
+    background: var(--content-bg-color);
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    height: 100vh;
+    overflow: auto;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    &-page {
+        width: 100%;
+    }
+
+    &-container {
+        display: flex;
+    }
+
+    &-caption {
+        font-size: $cardTitleFontSize;
+        margin-bottom: $gutter;
+        padding-bottom: $gutter;
+        border-bottom: 1px solid var(--border-color);
+        font-weight: bold;
+    }
+
+    &-message {
+        width: 100%;
+        padding: $gutter $pageGutter;
+        background: var(--bg);
+        font-size: $fontSize;
+
+        @media (max-width: $bpLaptop) {
+            padding: $gutter;
+        }
+
+        @media (max-width: $bpMobile) {
+            padding: $gutter / 2 $gutter;
+        }
+
+        &.-inner {
+            padding: $gutter;
+        }
+
+        &.-popup {
+            padding: $gutter $gutter * 3 $gutter $gutter * 1.5;
+
+            @media (max-width: $bpMobile) {
+                padding: $gutter / 2  $gutter * 1.5;
+            }
+        }
+
+        &.-error {
+            color: var(--error-color);
+            background: var(--error-bg-color);
+        }
+
+        &.-info {
+            color: #004085;
+            background-color: #cce5ff;
+        }
+    }
+
+    &-menu {
+        padding: 0 0 68px;
+        flex: 1;
+        overflow: hidden;
+
+        &__items {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: 0 $pageGutter - $gutter * .5;
+
+            @media (max-width: $bpLaptop) {
+                padding: 0 $gutter * .5;
+            }
+        }
+
+        &__category {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: $gutter;
+
+            &-name {
+                padding: $gutter $pageGutter;
+                margin: 0;
+
+                @media (max-width: $bpLaptop) {
+                    padding: $gutter;
+                }
+            }
+        }
+    }
+
+    &-confirm {
+        padding: $gutter * 3;
+
+        @media (max-width: $bpTablet) {
+            padding: $gutter;
+        }
+
+        &__title {
+            font-size: var(--confirm-title-font-size);
+            margin-bottom: $gutter * 2;
+        }
+
+        &__controls {
+            display: flex;
+
+            .ov-button:not(:last-child) {
+                margin-right: $gutter;
+            }
+        }
+    }
+
+    &-customer {
+        padding: $gutter * 1.5;
+
+        &__message {
+            margin: -$gutter - 1px $gutter * -1.5 $gutter;
+            width: calc(100% + #{$gutter * 3});
+        }
+    }
+
+    @import "header";
+    @import "selector";
+    @import "button";
+    @import "card";
+    @import "info";
+    @import "order";
+    @import "basket";
+    @import "quantity";
+    @import "offers";
+    @import "offer";
+    @import "footer";
+    @import "navigation";
+    @import "../price";
+    @import "../popup";
+    @import "../form";
+}

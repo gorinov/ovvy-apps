@@ -1,0 +1,407 @@
+&-form {
+  display: flex;
+  flex-direction: column;
+
+  &.-checkout {
+    background: var(--card-bg);
+    padding: 40px 80px 40px 40px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @media (max-width: $bpMobile) {
+      padding: $gutter;
+    }
+
+    .ov-form__field {
+      margin-bottom: 20px;
+    }
+
+    .ov-form__control {
+      padding: 17px 0 12px;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex-grow: 1;
+    align-self: flex-start;
+    width: 100%;
+    margin-bottom: 5px;
+
+    &.-exempt {
+      position: static;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 0;
+    cursor: text;
+    transition: all $transition;
+    color: var(--form-text-color);
+    opacity: $opacity;
+    font-size: $labelFontSize;
+    pointer-events: none;
+
+    &.-filled {
+      font-size: $labelFontSizeFocus;
+      transform: translateY(0);
+      top: 0;
+      opacity: 1;
+    }
+
+    &.-textarea {
+      position: static;
+      transform: none;
+      opacity: 1;
+      margin-bottom: $gutter / 2;
+      padding-top: $gutter / 2;
+    }
+  }
+
+  &__control {
+    width: 100%;
+    outline: none;
+    border: 0;
+    margin: 0;
+    border-bottom: 1px solid var(--border-color);
+    background: transparent;
+    padding: 20px 0 10px;
+    color: var(--form-text-color);
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 50px white inset;
+    }
+
+    &.-selectable {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &.-textarea {
+      max-height: 280px;
+      min-height: 62px;
+      background-color: var(--form-textarea-bg-color);
+      font-family: inherit;
+      resize: vertical;
+      padding: $gutter / 2;
+      padding: 0;
+
+      &.-inner {
+        padding: 12px;
+        min-height: 76px;
+      }
+    }
+
+    &.-open {
+      .ov-form__control-arrow {
+        transform: rotate(180deg);
+      }
+    }
+
+    &-arrow, &-icon {
+      width: 14px;
+      height: 14px;
+      transition: var(--transition-speed);
+      opacity: var(--icon-opacity);
+      margin-right: $gutter / 2;
+    }
+  }
+
+  &__option {
+    position: absolute;
+    top: calc(100% - 1px);
+    width: 100%;
+    height: auto;
+    background: var(--card-bg-color);
+    z-index: $z-index;
+    max-height: 240px;
+    overflow: auto;
+    border: 1px solid var(--border-color);
+    margin: 0;
+    font-size: $labelFontSize;
+
+    &-item {
+      cursor: pointer;
+      padding: $gutter;
+      transition: background-color $transition;
+
+      @media (max-width: $bpTablet) {
+        padding: $gutter / 2;
+      }
+
+      &:hover {
+        background: var(--content-bg-color);
+      }
+    }
+  }
+
+  &__select {
+    list-style: none;
+    box-sizing: border-box;
+    transition: var(--transition-speed);
+    background: var(--app-bg);
+    flex-wrap: wrap;
+    display: none;
+    width: 102%;
+    margin: 0 0 0 -1%;
+    padding: 0;
+
+    &.-open {
+      display: flex;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    &-item {
+      cursor: pointer;
+      border: 1px solid var(--select-color);
+      color: var(--select-color);
+      padding: 0;
+      border-radius: 18px;
+      box-sizing: border-box;
+      line-height: 34px;
+      float: left;
+      text-align: center;
+      transition: .2s;
+
+      &.-active, &:hover {
+        color: var(--font-color);
+        border-color: var(--font-color);
+        transition: .2s;
+      }
+
+      &.-disabled {
+        pointer-events: none;
+        background: var(--disabled-bg-color);
+        color: var(--disabled-color);
+      }
+    }
+
+    &.-time {
+      border-top: 0;
+      padding-bottom: $gutter / 2;
+
+      li {
+        width: 23%;
+        margin: 1%;
+      }
+    }
+
+    &.-persons {
+      padding: $gutter / 2 0;
+
+      li {
+        width: 18%;
+        margin: 1%;
+      }
+    }
+
+    &.-shadow {
+      box-shadow: var(--shadow);
+    }
+
+    &-label {
+      margin-right: 10px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    position: relative;
+
+    .ov-form__field {
+      &:not(:last-child) {
+        margin-right: $gutter;
+      }
+    }
+
+    @media (max-width: $bpMobile) {
+      flex-wrap: wrap;
+
+      .ov-form__field {
+        &:not(:last-child) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &.-nowrap {
+      @media (max-width: $bpMobile) {
+        flex-wrap: nowrap;
+      }
+    }
+
+    &.-submit {
+      padding-top: $gutter;
+    }
+
+    &.-address {
+      @media (max-width: $bpMobile) {
+        .ov-form__field {
+          flex-basis: 50%;
+
+          &:not(:last-child) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__button {
+    &-container {
+      padding-top: $gutter / 2;
+    }
+  }
+
+  &__switcher {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    &-container {
+      padding: 17px 0 0;
+
+      &.-last {
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--border-color);
+      }
+    }
+
+    &.-open {
+      .ov-form__switcher-arrow {
+        transform: rotate(180deg);
+      }
+    }
+
+    &-target {
+      display: none;
+
+      &.-open {
+        display: block;
+      }
+    }
+
+    &-label {
+      margin-right: 10px;
+    }
+
+    &-arrow {
+      width: 14px;
+      height: 14px;
+      transition: var(--transition-speed);
+      opacity: var(--icon-opacity);
+      margin-right: $gutter / 2;
+    }
+  }
+
+  &__container {
+    margin-top: -6px;
+  }
+
+  &__calendar {
+    display: none;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+
+    &.-open {
+      display: block;
+    }
+
+    .react-datepicker {
+      border: 0;
+      font-family: inherit;
+      font-size: var(--font-size);
+
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+
+      &__header {
+        padding: 0;
+
+        .react-datepicker__day-name {
+          font-size: .9em;
+          opacity: .7;
+        }
+      }
+
+      &__current-month {
+        margin-bottom: 0;
+        font-size: .9em;
+        padding: $gutter * 2/3 0;
+        background: var(--disabled-bg-color);
+      }
+    }
+
+    .react-datepicker, .react-datepicker__month-container {
+      width: 100%;
+    }
+
+    .react-datepicker__day-name, .react-datepicker__day {
+      width: 43px;
+      margin: 0 3px;
+    }
+
+    .react-datepicker__day {
+      height: 43px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      outline: none;
+
+      &--disabled {
+        pointer-events: none;
+      }
+
+      &:hover {
+        border-radius: 50%;
+        background: none;
+        border: 1px solid var(--border-color)
+      }
+    }
+
+    .react-datepicker__header {
+      background: none;
+      border: 0;
+    }
+
+    .react-datepicker__day--selected, .react-datepicker__day--selected:hover {
+      background: var(--primary-color);
+    }
+
+    .react-datepicker__day--keyboard-selected {
+      background: none;
+      color: inherit
+    }
+
+    .react-datepicker__day--keyboard-selected:hover {
+      background: #f0f0f0;
+    }
+
+    .react-datepicker__navigation-icon::before {
+      width: 11px;
+      height: 11px;
+    }
+
+    .react-datepicker__navigation-icon {
+      height: 23px;
+    }
+
+
+    button {
+      outline: none;
+    }
+  }
+}

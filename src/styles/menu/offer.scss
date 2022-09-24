@@ -1,0 +1,100 @@
+&-offer {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  transition: all $transition;
+
+  &:hover {
+    box-shadow: $shadowLight;
+  }
+
+  $size: 12px;
+  &:before, &:after {
+    content: '';
+    width: 14px;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: radial-gradient(ellipse at center, var(--content-bg-color) 0, var(--content-bg-color) 50%, transparent 50%);
+    background-size: $size $size;
+    background-repeat: repeat-y;
+    background-position: 0 2px;
+
+    @media (max-width: $bpMobile) {
+      background-size: 10px 10px;
+    }
+
+    @media (max-width: $bpMobile) {
+      background-position: 0 0;
+    }
+  }
+
+  &:before {
+    left: $size / -2;
+
+    @media (max-width: $bpMobile) {
+      left: -5px;
+    }
+  }
+
+  &:after {
+    right: $size / -2;
+
+    @media (max-width: $bpMobile) {
+      right: -8px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background: var(--card-bg-color);
+
+    @media (max-width: $bpMobile) {
+      height: 70px;
+    }
+  }
+
+  &__content {
+    padding: $gutter;
+    flex-grow: 1;
+
+    @media (max-width: $bpMobile) {
+      padding: $gutter / 2 $gutter / 2 $gutter / 2 $gutter;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    flex: 1 0 33.33%;
+
+    @media (max-width: $bpMobile) {
+      border-radius: $gutter / 2 0 0 $gutter / 2;
+    }
+  }
+
+  &__name {
+    font-size: $cardTitleFontSize;
+
+    @media (max-width: $bpMobile) {
+      font-size: $cardTitleFontSize * $mobileCoeficient;
+    }
+  }
+
+  &__description {
+    font-size: $cardTextFontSize;
+    color: var(--card-text-font-color);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: $gutter / 2;
+
+    @media (max-width: $bpLaptopLarge) {
+      display: none;
+    }
+  }
+}

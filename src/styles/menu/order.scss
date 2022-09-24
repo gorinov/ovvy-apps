@@ -1,0 +1,25 @@
+&-order {
+  display: flex;
+  align-items: flex-end;
+
+  &__value {
+    font-weight: 600;
+    margin-right: 3px;
+  }
+
+  &__unit {
+  }
+
+  &__label {
+    margin-right: 4px;
+    opacity: .75;
+  }
+
+  &__quantity {
+    padding-left: 3px;
+
+    span {
+      opacity: $opacity;
+    }
+  }
+}

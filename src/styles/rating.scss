@@ -1,0 +1,33 @@
+&-rating {
+  display: inline-flex;
+  align-items: center;
+  background: var(--primary-color);
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+
+  @media (max-width: $bpMobile) {
+    font-size: 12px;
+  }
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+    color: var(--rating-color);
+    margin-right: $gutter / 2;
+  }
+
+  &__value {
+    font-weight: 600;
+    color: var(--rating-color);
+  }
+
+  &__votes {
+    color: var(--rating-votes-color);
+
+    &:before {
+      content: '•';
+      margin: 0 5px;
+    }
+  }
+}

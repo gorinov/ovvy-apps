@@ -1,0 +1,42 @@
+&-offers {
+  width: 100%;
+  padding: $gutter $pageGutter 0;
+
+  @media (max-width: $bpLaptop) {
+    padding: $gutter $gutter 0;
+  }
+
+  &__container {
+    display: flex;
+    overflow: auto;
+    padding-bottom: $gutter / 2;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    @media (max-width: $bpLaptop) {
+      padding-bottom: $gutter - 10px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__item {
+    width: 50%;
+
+    @media (max-width: $bpLaptop) {
+      width: 85%;
+      min-width: 85%;
+    }
+
+    &:not(:last-child) {
+      margin-right: $gutter;
+
+      @media (max-width: $bpMobile) {
+        margin-right: $gutter / 2;
+      }
+    }
+  }
+}

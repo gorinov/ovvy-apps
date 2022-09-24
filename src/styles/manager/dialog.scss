@@ -1,0 +1,36 @@
+&-dialog {
+  min-height: 200px;
+  min-width: 300px;
+
+  &__title {
+    padding-bottom: $gutter!important;
+    border-bottom: 1px solid $borderColor;
+  }
+
+  &__panel {
+    background: #F4F5F7;
+    padding: $gutter * .75 $gutter * 1.25!important;
+  }
+
+  &__text {
+    padding-top: $gutter;
+  }
+
+  &__content {
+    padding-top: $gutter * .5!important;
+  }
+
+  p {
+    line-height: 1.25;
+  }
+
+  .ov-form {
+    &__row {
+      padding: $gutter * .5 0;
+    }
+
+    &__field {
+      padding: 0 $gutter * .5;
+    }
+  }
+}

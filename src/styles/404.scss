@@ -1,0 +1,12 @@
+&-404 {
+  background: var(--content-bg);
+  padding: calc(var(--gutter) * 3) var(--gutter);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    margin: 0;
+    font-size: 4em;
+  }
+}

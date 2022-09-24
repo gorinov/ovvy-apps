@@ -1,0 +1,21 @@
+&-link {
+  cursor: pointer;
+  color: var(--link-color);
+  border-bottom: 1px dashed var(--link-color);
+  transition: all var(--transition-speed);
+  text-decoration: none;
+
+  &:hover {
+    border-bottom-color: transparent;
+  }
+
+  &.-as-text {
+    color: inherit;
+    border-bottom-color: transparent;
+
+    &:hover {
+      border-bottom-color: inherit;
+      color: inherit;
+    }
+  }
+}

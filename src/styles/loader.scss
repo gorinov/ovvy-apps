@@ -1,0 +1,78 @@
+&__loader {
+  $green: #008744;
+  $blue: #0057e7;
+  $red: #F44336;
+  $yellow: #ffa700;
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba($loaderBg, .5);
+  z-index: 9999;
+  left: 0;
+  top: 0;
+
+  $width: 60px;
+
+  &-container {
+    width: $width;
+    height: $width;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  svg {
+    animation: rotate 2s linear infinite;
+
+    circle {
+      stroke-dasharray: 1,200;
+      stroke-dashoffset: 0;
+      animation:
+              dash 1.5s ease-in-out infinite,
+              color 6s ease-in-out infinite
+      ;
+      stroke-linecap: round;
+    }
+  }
+
+  @keyframes rotate{
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes dash{
+    0%{
+      stroke-dasharray: 1,200;
+      stroke-dashoffset: 0;
+    }
+    50%{
+      stroke-dasharray: 89,200;
+      stroke-dashoffset: -35;
+    }
+    100%{
+      stroke-dasharray: 89,200;
+      stroke-dashoffset: -124;
+    }
+  }
+
+  @keyframes color{
+    100%, 0%{
+      stroke: $red;
+    }
+    40%{
+      stroke: $blue;
+    }
+    66%{
+      stroke: $green;
+    }
+    80%, 90%{
+      stroke: $yellow;
+    }
+  }
+}

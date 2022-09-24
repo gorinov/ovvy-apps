@@ -1,0 +1,44 @@
+&-confirm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $gutter;
+  height: 100%;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: $gutter;
+
+    &-icon {
+      width: 60px;
+      height: 60px;
+      margin-right: $gutter;
+
+      &.-success {
+        color: var(--success-color);
+      }
+    }
+
+    &-message {
+      font-weight: 700;
+    }
+  }
+
+  &__message {
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin: $gutter 0;
+  }
+
+  &__info {
+    padding: $gutter;
+    color: var(--info-color);
+    background: var(--info-bg-color);
+    margin-bottom: $gutter;
+  }
+}

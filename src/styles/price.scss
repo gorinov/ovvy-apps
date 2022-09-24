@@ -1,0 +1,27 @@
+&-price {
+    display: flex;
+    align-items: flex-end;
+
+    &__old {
+        font-size: $priceOldFontSize;
+        color: var(--price-old-color);
+        text-decoration: line-through;
+        margin-right: $gutter * .25;
+
+        @media (max-width: $bpMobile) {
+            font-size: $priceOldFontSize * $mobileCoeficient;
+        }
+    }
+
+    &__base {
+        font-size: $priceFontSize;
+
+        @media (max-width: $bpMobile) {
+            font-size: $priceFontSize * $mobileCoeficient;
+        }
+    }
+
+    &__currency {
+        margin-left: 2px;
+    }
+}

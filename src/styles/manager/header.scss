@@ -1,0 +1,45 @@
+&-header {
+  height: var(--header-height);
+  width: 100%;
+  background: var(--primary-color);
+  position: fixed;
+  z-index: var(--overrite-z-index);
+  top: 0;
+  left: 0;
+  border-bottom: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--gutter);
+
+  &__panel {
+
+  }
+
+  &__avatar {
+    cursor: pointer;
+    width: 34px!important;
+    height: 34px!important;
+  }
+
+  &__col {
+    flex-grow: 1;
+  }
+
+  &__popover {
+    padding: var(--gutter);
+  }
+
+  &__panel {
+    float: right;
+  }
+
+  &__aside-toggle {
+    color: var(--content-bg);
+    display: none;
+
+    @media (max-width: $bpTablet) {
+      display: inline-block;
+    }
+  }
+}

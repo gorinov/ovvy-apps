@@ -1,0 +1,55 @@
+@import "../base";
+
+:root {
+  --content-bg: #fff;
+  --bg: #F4F5F7;
+  --border: 1px solid rgba(0, 0, 0, 0.12);
+  --gutter: 16px;
+  --gutter-large: 24px;
+  --speed: .3s;
+  --index: 1;
+  --shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+  --card-bg: #fff;
+  --border-radius: 5px;
+  --border-color: #e6e6e6;
+
+  --secondary-color: #30bced;
+  --primary-color: #F44336;
+  --secondary-font-color: #fff;
+
+  --success-color: #8dc63f;
+  --font-color: rgb(97, 97, 97);
+  --font-size: 14px;
+}
+
+
+@media (max-width: $bpTablet) {
+  :root {
+    --gutter-large: 16px;
+  }
+}
+
+@media (max-width: $bpMobile) {
+  :root {
+    --gutter: 10px;
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+.ov {
+  padding: var(--gutter);
+  font-size: var(--font-size);
+
+  h2 {
+    font-weight: 600;
+    margin: 0 0 var(--gutter);
+  }
+
+  .ov {
+    @import "../admin-form";
+    @import "../map";
+  }
+}

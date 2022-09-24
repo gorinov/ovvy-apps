@@ -1,0 +1,49 @@
+&-selector {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--button-stepper-bg-color);
+    max-width: $bpMobile;
+
+    @media (max-width: $bpLaptop) {
+        max-width: 100%;
+
+        .ov-selector__hint {
+            padding: 0 $gutter $gutter / 2;
+        }
+    }
+
+    &.-header {
+        padding: 0;
+        width: $bpMobile;
+        height: 100%;
+
+        @media (max-width: $bpDesktop) {
+            width: 300px;
+        }
+    }
+
+    &__container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: $gutter / 2 $gutter;
+        border-radius: var(--button-border-radius);
+    }
+
+    &__hint {
+        padding: 0 $gutter $gutter / 2;
+        font-size: $noteFontSize;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+        color: var(--button-stepper-color);
+
+        span {
+            cursor: pointer;
+        }
+    }
+}

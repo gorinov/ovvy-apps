@@ -1,0 +1,98 @@
+@import "../base";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+  --primary-color: #F44336;
+  --primary-contrasting-color: #fff;
+
+  --accent-color: #4CAF50;
+  --app-bg: #fff;
+
+  --button-booking: #5cb85c;
+  --button-booking-hover: #46a146;
+  --select-color: #d2d2d2;
+  --disabled-bg-color: #f4f4f4;
+  --info-color: #004085;
+  --info-bg-color: #cce5ff;
+
+  --error-color: #721c24;
+  --error-bg-color: #f8d7da;
+
+  --success-color: #8dc63f;
+
+  --icon-opacity: .5;
+  --gutter: 15px;
+  --shadow: 0 4px 8px 0 rgba(0, 0, 0, .08);
+
+  --font-size: 15px;
+  --font-color: rgb(97, 97, 97);
+}
+
+.ov {
+  $gutter: 15px;
+
+  min-width: 260px;
+  min-height: 220px;
+  max-width: 360px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background: var(--app-bg);
+  font-size: var(--font-size);
+  color: var(--font-color);
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+
+  &-title {
+    text-align: center;
+    font-size: 16px;
+    line-height: 36px;
+    font-weight: 700;
+    border-bottom: 1px solid $borderColor;
+    margin: 0 0 $gutter;
+  }
+
+  &-alert {
+    padding: $gutter;
+    color: var(--error-color);
+    background: var(--error-bg-color);
+    text-align: center;
+  }
+
+  &-motivator {
+    padding: 6px 5px;
+    background: var(--primary-color);
+    font-size: 12px;
+    width: 100%;
+    color: var(--primary-contrasting-color);
+    box-sizing: border-box;
+    text-align: center;
+    animation-name: motivational;
+    animation-duration: 15s;
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+
+    @keyframes motivational {
+      10% {
+        opacity: 0;
+      }
+      10%, 93% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  @import "../form";
+  @import "confirm";
+  @import "button";
+}

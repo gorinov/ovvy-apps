@@ -1,0 +1,109 @@
+@import "reset";
+
+:root {
+  --overlay-font-color: #fff;
+  --overlay-background-color: rgba(0, 0, 0, .5);
+  --overlay-opacity: .85;
+  --label-color: rgb(107, 107, 107);
+  --disabled-fond-color: #b0b0b0;
+  --disabled-color: #a4a4a4;
+  --transition-speed: .3s;
+  --border-color: #e3e4e6;
+  --border-color-dark: rgba(0, 0, 0, 0.12);
+  --basket-title-font-size: 18px;
+  --confirm-title-font-size: 18px;
+
+  --link-color: #30bced;
+
+  --default-z-index: 1;
+  --overrite-z-index: 10;
+
+  --button-border-radius: 4px;
+  --button-light-bg: #f6f6f6;
+  --button-light-hover-bg: #e3e4e6;
+  --button-light-color: #898989;
+
+  --price-color: #333;
+  --price-old-color: #b0b0b0;
+
+  --form-text-color: #333;
+  --form-textarea-bg-color: #f6f6f6;
+}
+
+$bpMobile: 480px;
+$bpTablet: 768px;
+$bpLaptop: 1024px;
+$bpLaptopLarge: 1240px;
+$bpDesktop: 1640px;
+$loaderBg: #fff;
+$noteFontSize: 12px;
+$priceFontSize: 21px;
+$priceOldFontSize: 14px;
+$gutter: 16px;
+$mobileCoeficient: .8;
+$transition: .3s;
+$opacity: .73;
+$labelFontSize: 14px;
+$labelFontSizeFocus: 12px;
+$borderColor: #efefef;
+$z-index: 1;
+
+hr {
+  border-style: solid;
+  border-color: $borderColor;
+  border-width: 1px 0 0 0;
+  margin: var(--gutter) 0;
+  width: 100%;
+}
+
+.ov {
+  width: 100%;
+  font-size: var(--font-size);
+  color: var(--font-color);
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  h1, h2 {
+    font-weight: 600;
+  }
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: .5em;
+    }
+  }
+
+  &__inner-alert {
+    margin-bottom: var(--gutter);
+  }
+
+  &-expand {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+
+    &__text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  input, textarea, button {
+    font-size: $labelFontSize;
+  }
+
+  @import "loader";
+  @import "link";
+}

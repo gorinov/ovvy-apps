@@ -1,0 +1,33 @@
+&-table {
+  background: var(--content-bg);
+
+  &__icon {
+    &-container {
+      padding: 0 var(--gutter);
+      display: flex;
+      align-items: center;
+    }
+
+    &.-approve {
+      color: var(--success-color);
+    }
+
+    &.-unapprove {
+      color: var(--error-color);
+    }
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+
+    &-text {
+      margin-right: var(--gutter);
+    }
+
+    button:not(:last-child){
+      margin-right: calc(var(--gutter) / 2);
+    }
+  }
+}
+
